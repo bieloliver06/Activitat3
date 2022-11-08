@@ -167,3 +167,7 @@ Console.WriteLine($"{A} mòdul {B} és {A % B}");
 
 [^1]: Utilitzam `catch (System.FormatException)` per evitar que ens surti un error si el que hem introduit no son nombres, i utilitzam `catch (System.OverflowException)` per evitar que ens surti un error si el que hem introduit no sigui major que 0;
 [^2]: Utilitzam `catch (System.FormatException)` per evitar que ens surti un error si el que hem introduit no son nombres.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
