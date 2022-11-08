@@ -110,7 +110,7 @@ while (true)
         }
         catch (System.FormatException)
         {
-            Console.WriteLine("El que has introduit no hes valid");
+            Console.WriteLine("El que has introduit no és valid");
         }
     }
 }
@@ -125,6 +125,45 @@ Console.WriteLine($"El perimetre de un cercle amb un radi {d_radius} és de {d_p
 ```
 
 ## Apartat 3
+
+### 1. Definim les variables
+
+Definim les variables que utilitzarem.
+
+```c#
+float A;
+float B;
+```
+
+### 2. Introduim els valors
+
+Introduim els valors A i B [^2]
+
+```C#
+while (true)
+{
+    Console.WriteLine("Introdueix el valor A : ");
+    string? s_A = Console.ReadLine();
+    if (s_A != null)
+    {
+        try
+        {
+            A = float.Parse(s_A);
+            break;
+        }
+        catch (System.FormatException)
+        {
+            Console.WriteLine("El que has introduit no és valid");
+        }
+    }
+}
+```
+
+### 3. Mostram el resultat de fer A modul B
+
+```c#
+Console.WriteLine($"{A} mòdul {B} és {A % B}");
+```
 
 [^1]: Utilitzam `catch (System.FormatException)` per evitar que ens surti un error si el que hem introduit no son nombres, i utilitzam `catch (System.OverflowException)` per evitar que ens surti un error si el que hem introduit no sigui major que 0;
 [^2]: Utilitzam `catch (System.FormatException)` per evitar que ens surti un error si el que hem introduit no son nombres.

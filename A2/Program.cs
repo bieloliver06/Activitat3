@@ -21,7 +21,7 @@
                     }
                     catch (System.FormatException)
                     {
-                        Console.WriteLine("El que has introduit no hes valid");
+                        Console.WriteLine("El que has introduit no és valid");
                     }
                 }
             }
