@@ -80,4 +80,49 @@ uint mitja = i_ageTotal / i_numAges;
 Console.WriteLine($"La mitja es de {mitja}");
 ```
 
+## Apartat 2
+
+### 1. Definim les variables
+
+Definim les variables que utilitzarem
+
+```C#
+double d_radius;
+double d_area;
+double d_perimeter;
+```
+
+### 2. Introduim el radi de la circumferencia
+
+Demanam que ens introduesqui el radi, i utilitzam `Math.Abs` per fer el valor absolut i que sempre sigui positiu. [^2]
+
+```C#
+while (true)
+{
+    Console.WriteLine("Introdueix el radi del cercle (cm) : ");
+    string? s_radius = Console.ReadLine();
+    if (s_radius != null)
+    {
+        try
+        {
+            d_radius = Math.Abs(Convert.ToDouble(s_radius));
+            break;
+        }
+        catch (System.FormatException)
+        {
+            Console.WriteLine("El que has introduit no hes valid");
+        }
+    }
+}
+```
+
+### 3. Calculam l'area i el perimetre
+
+Per calcular el perimetre i l'area utilitzarem `Math.PI` per tenir un nombre pi bastant complet. Per fer l'area farem `d_area = Math.PI * Math.Pow(d_radius, 2);`, i per el perimetre farem `d_perimeter = 2 * Math.PI * d_radius;` i finalment el mostrarem amb :
+
+```C#
+Console.WriteLine($"El perimetre de un cercle amb un radi {d_radius} és de {d_perimeter} cm, i té un area de {d_area} cm^2");
+```
+
 [^1]: Utilitzam `catch (System.FormatException)` per evitar que ens surti un error si el que hem introduit siguin nombres, i utilitzam `catch (System.OverflowException)` per evitar que ens surti un error si el que hem introduit no sigui major que 0;
+[^2]: Utilitzam `catch (System.FormatException)` per evitar que ens surti un error si el que hem introduit siguin nombres.
