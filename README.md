@@ -38,4 +38,46 @@ while (true)
 }
 ```
 
-[^1]: Utilitzam **`catch (System.FormatException)`** per evitar que ens surti un error si el que hem introduit siguin nombres, i utilitzam **`catch (System.OverflowException)`** per evitar que ens surti un error si el que hem introduit no sigui major que 0;
+### 2. Intrduir les edats
+
+Per introduir les edats utilitzam `for (int i = 0; i < i_numAges; i++)` per demanar-les el nombre de vegades que hem introduit abans i ja que el que hem de fer es la mitja el que feim es sumar la edat que han introduit a les edats anteriors. [^1]
+
+```C#
+uint i_ageTotal = 0;
+for (int i = 0; i < i_numAges; i++)
+{
+    while (true)
+    {
+        Console.WriteLine($"Introdueix la edat {i + 1} :");
+        string? s_age = Console.ReadLine();
+        if (s_age != null)
+        {
+            try
+            {
+                uint i_age = Convert.ToUInt16(s_age);
+                i_ageTotal = i_ageTotal + i_age;
+                break;
+            }
+            catch (System.FormatException)
+            {
+                Console.WriteLine("El que has introduit no es valid");
+            }
+            catch (System.OverflowException)
+            {
+                Console.WriteLine("El nombre no pot ser menor que 0");
+            }
+        }
+    }
+}
+```
+
+### 3. Feim la mitja i mostrar-la
+
+Feim la mitja dividint el total de les edats introduides per el nombre de edats introduides.
+
+```C#
+uint mitja = i_ageTotal / i_numAges;
+Console.WriteLine($"La mitja es de {mitja}");
+```
+
+[^1]: Utilitzam `catch (System.FormatException)` per evitar que ens surti un error si el que hem introduit siguin nombres, i utilitzam `catch (System.OverflowException)` per evitar que ens surti un error si el que hem introduit no sigui major que 0;
