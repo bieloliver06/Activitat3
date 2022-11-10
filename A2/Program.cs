@@ -28,7 +28,7 @@
 
             d_area = Math.PI * Math.Pow(d_radius, 2);
             d_perimeter = 2 * Math.PI * d_radius;
-            Console.WriteLine($"El perimetre de un cercle amb un radi {d_radius} és de {d_perimeter} cm, i té un area de {d_area} cm^2");
+            Console.WriteLine($"El perimetre de un cercle amb un radi {d_radius} és de {d_perimeter} cm, i té un àrea de {d_area} cm^2");
         }
     }
 }
