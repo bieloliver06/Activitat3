@@ -53,7 +53,7 @@
                 }
             }
             uint mitja = i_ageTotal / i_numAges;
-            Console.WriteLine($"La mitja es de {mitja}");
+            Console.WriteLine($"La mitja es de {mitja} anys");
         }
     }
 }
